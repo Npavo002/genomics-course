@@ -1,0 +1,17 @@
+---
+title: "index.rmd"
+author: "Narciso"
+date: "8/31/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```
+## Labs
+
+### R basics
+* 1 : [Introduction to R and Reproducible Research](Lab1_Narciso.html)
+```
