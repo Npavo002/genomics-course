@@ -14,4 +14,5 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ### R basics
 * 1 : [Introduction to R and Reproducible Research](Lab1_Narciso.html)
+* 2 : [git, Github and Rstudio project](Lab2.html)
 ```
