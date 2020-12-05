@@ -9,11 +9,25 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-![](Images/Homer_Brain.png)
+!["Picture"](Homer_Brain.png)
 
 ## Labs
 
 ### R basics
 * 1 : [Introduction to R and Reproducible Research](Lab1_Narciso.html)
 * 2 : [git, Github and Rstudio project](Lab2.html)
-
+* 3 : [Data Wrangling](Lab3a.html)
+* 3b : [Data Wrangling2](Lab3b.html)
+* 4 : [Data wrangling and graphing COVID-19 reporting data Part 1](LAB4.html)
+* 5 : [Data wrangling and graphing COVID-19 reporting data (Part 2)](Lab5.html)
+* 5x : [Interactive Graphs and Animations](Lab5x.html)
+* 6: [Mapping COVID-19 reporting data](Lab6.html)
+* 7: [RNAseq workflow](Lab7.html)
+* 8: [Tree Visualization using ggtree](Lab8.html)
+* 9: [Programming in R - Regular Expressions](Lab9.html)
+* 9x: [Control Structures and Functions](Lab9x.html)
+* 10: [Population genomics based on high throughput sequencing (HTS)](Lab10.html)
+* 11: [Microbiome Analysis using dada2](Lab11.html)
+* 11x: [Microbiome Analysis using phyloseq](Lab11x.html)
+* 12: [Network Analysis using Cytoscape and RCy3](Lab12.html)
+* 13: [Github Website]()
