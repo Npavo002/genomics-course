@@ -8,9 +8,7 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
-!["Picture"](Homer_Brain.png)
-
+!["Picture"](Images/Homer_Brain.png)
 ## Labs
 
 ### R basics
