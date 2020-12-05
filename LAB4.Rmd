@@ -1,0 +1,97 @@
+---
+title: "Lab4"
+author: "Narciso"
+date: "9/14/2020"
+output: html_document
+editor_options: 
+  chunk_output_type: inline
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+```
+
+```{r, eval=TRUE}
+report_03_11_2020 <-   read_csv(url("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/03-11-2020.csv")) %>%
+  rename(Country_Region = "Country/Region", Province_State = "Province/State")
+```
+
+```{r}
+str(report_03_11_2020)
+View(report_03_11_2020)
+```
+
+```{r}
+library(DT)
+datatable(report_03_11_2020)
+```
+
+### Excercise Part 1 - All 4 Parts
+```{r}
+report_03_12_2020 <-   read_csv(url("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/03-12-2020.csv")) %>%
+  rename(Country_Region = "Country/Region", Province_State = "Province/State")
+
+report_09_12_2020 <-   read_csv(url("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/03-11-2020.csv")) %>%
+  rename(Country_Region = "Country/Region", Province_State = "Province/State")
+
+report_03_12_2020 %>% 
+  filter(Country_Region == "US") %>% 
+  group_by(Province_State) %>% 
+summarize(Deaths = sum(Deaths)) %>% 
+arrange(desc(Deaths)) %>% 
+  slice(1:10)
+
+report_09_12_2020 %>% 
+  filter(Country_Region == "US") %>% 
+  group_by(Province_State) %>% 
+summarize(Deaths = sum(Deaths)) %>% 
+arrange(desc(Deaths)) %>% 
+  slice(1:10)
+
+```
+
+### Excercise Part 2 - All parts
+```{r}
+top10d <- report_03_12_2020 %>% 
+  filter(Country_Region == "US") %>% 
+  group_by(Province_State) %>% 
+  summarize(Confirmed, Deaths = sum(Deaths), min_deaths = min(Deaths)) %>% 
+  arrange(desc(min_deaths)) %>% 
+  slice(1:10)
+
+ggplot(data = top10d, aes(x = Deaths, y = Province_State)) + geom_bar(stat = 'identity')
+
+top10d <- report_09_12_2020 %>% 
+  filter(Country_Region == "US") %>% 
+  group_by(Province_State) %>% 
+  summarize(Confirmed, Deaths = sum(Deaths), min_deaths = min(Deaths)) %>% 
+  arrange(desc(min_deaths)) %>% 
+  slice(1:10)
+
+ggplot(data = top10d, aes(x = Deaths, y = Province_State)) + geom_bar(stat = 'identity')
+
+top10d <- report_03_12_2020 %>% 
+  filter(Country_Region == "US") %>% 
+  group_by(Province_State) %>% 
+  summarize(Confirmed, Deaths = sum(Deaths), min_deaths = min(Deaths)) %>% 
+  arrange(desc(min_deaths)) %>% 
+  slice(1:10)
+
+ggplot(data = top10d, aes(x = Deaths, y = Province_State)) + geom_point()
+
+top10d <- report_09_12_2020 %>% 
+  filter(Country_Region == "US") %>% 
+  group_by(Province_State) %>% 
+  summarize(Confirmed, Deaths = sum(Deaths), min_deaths = min(Deaths)) %>% 
+  arrange(desc(min_deaths)) %>% 
+  slice(1:10)
+
+ggplot(data = top10d, aes(x = Deaths, y = Province_State)) + geom_point()
+
+
+```
+
